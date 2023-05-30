@@ -1,24 +1,24 @@
 {
-  "name": "test-project",
+  "name": "project-template-theme",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "",
   "license": "ISC",
   "theme": {
-    "name": "My Theme",
-    "uri": "https://example.com/my-theme",
+    "name": "project-template-theme",
+    "uri": "",
     "description": "Description of my theme",
     "version": "1.0.0",
-    "author": "Your Name",
-    "authorUri": "https://example.com/",
+    "author": "aomaru with mcommune",
+    "authorUri": "",
     "license": "GPL-2.0+",
     "licenseUri": "https://www.gnu.org/licenses/gpl-2.0.html",
     "tags": [
       "tag1",
       "tag2"
     ],
-    "textDomain": "my-theme",
+    "textDomain": "project-template-theme",
     "domainPath": "/languages"
   },
   "scripts": {

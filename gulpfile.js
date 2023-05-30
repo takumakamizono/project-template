@@ -18,10 +18,8 @@ function imageChange() {
         count++;
       })
     )
-    .pipe(dest("./test-theme/images"));
+    .pipe(dest("./project-template-theme/images"));
 }
-
-exports.imageChange = imageChange;
 
 function styles() {
   const themeInfo = pkg.theme;
@@ -41,7 +39,7 @@ function styles() {
   */
   `;
 
-  return src("./test-theme/styles/style.scss")
+  return src("./project-template-theme/styles/style.scss")
     .pipe($.sourcemaps.init())
     .pipe(sass())
     .pipe(
@@ -50,11 +48,9 @@ function styles() {
     .pipe($.cleanCss())
     .pipe($.header(comment))
     .pipe($.sourcemaps.write("."))
-    .pipe(dest("./test-theme/"))
+    .pipe(dest("./project-template-theme/"))
     .pipe(browserSync.stream());
 }
-
-exports.styles = styles;
 
 function startAppServer() {
   browserSync.init({
@@ -64,18 +60,16 @@ function startAppServer() {
     notify: false,
   });
 
-  watch("./test-theme/**/*.scss", styles);
-  watch("./test-theme/**/*.php").on("change", browserSync.reload);
+  watch("./project-template-theme/**/*.scss", styles);
+  watch("./project-template-theme/**/*.php").on("change", browserSync.reload);
 }
-
-exports.serve = startAppServer;
 
 function jsMinify() {
   return src([
-    "./test-theme/scripts/libs/*.js",
-    "./test-theme/scripts/*.js",
-    "!./test-theme/scripts/libs/*.min.js",
-    "!./test-theme/scripts/*.min.js",
+    "./project-template-theme/scripts/libs/*.js",
+    "./project-template-theme/scripts/*.js",
+    "!./project-template-theme/scripts/libs/*.min.js",
+    "!./project-template-theme/scripts/*.min.js",
   ])
     .pipe($.uglify())
     .pipe(
@@ -86,10 +80,13 @@ function jsMinify() {
     .pipe(
       $.if(
         (file) => path.basename(file.path) === "main.min.js",
-        dest("./test-theme/scripts"),
-        dest("./test-theme/scripts/libs")
+        dest("./project-template-theme/scripts"),
+        dest("./project-template-theme/scripts/libs")
       )
     );
 }
 
+exports.imageChange = imageChange;
+exports.styles = styles;
+exports.serve = startAppServer;
 exports.javascripts = jsMinify;

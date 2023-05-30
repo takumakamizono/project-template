@@ -9,10 +9,10 @@
     "https://downloads.wordpress.org/plugin/contact-form-7.zip",
     "https://downloads.wordpress.org/plugin/advanced-custom-fields.zip"
   ],
-  "themes": ["./test-theme"],
+  "themes": ["./project-template-theme"],
   "services": {
     "wordpress": {
-      "container_name": "test-project"
+      "container_name": "project-template-theme"
     }
   },
   "port": 4013,
