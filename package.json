@@ -1,0 +1,51 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "theme": {
+    "name": "My Theme",
+    "uri": "https://example.com/my-theme",
+    "description": "Description of my theme",
+    "version": "1.0.0",
+    "author": "Your Name",
+    "authorUri": "https://example.com/",
+    "license": "GPL-2.0+",
+    "licenseUri": "https://www.gnu.org/licenses/gpl-2.0.html",
+    "tags": [
+      "tag1",
+      "tag2"
+    ],
+    "textDomain": "my-theme",
+    "domainPath": "/languages"
+  },
+  "scripts": {
+    "wp-env": "wp-env",
+    "start": "wp-env start && open http://localhost:4013",
+    "stop": "wp-env stop",
+    "destroy": "run wp-env destroy",
+    "update": "wp-env start --update",
+    "serve": "gulp serve"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^5.14.0",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-clone": "^2.0.1",
+    "gulp-dart-sass": "^1.1.0",
+    "gulp-header": "^2.0.9",
+    "gulp-if": "^3.0.0",
+    "gulp-image-resize": "^0.13.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.8",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "path": "^0.12.7"
+  }
+}
